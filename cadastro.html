@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style1.css"/>
+    <script src="javascript.js"></script>
+    <script src="nvctml.js"></script>
     <title>etis - Cadastro de Notícias</title>
 </head>
 <body>
@@ -23,7 +25,7 @@
         </nav>
         <hr>
     </header>
-    <form>
+    <form action="" onsubmit="controlar_cadastro()" class="formulario">
         <table>
             <tr>
                 <td><label for="titulonoticia">Titulo da Notícia: </label></td>
@@ -46,8 +48,10 @@
                 <td><input type="date" id="data" name="data"></td>
             </tr>
         </table>
-        <button>Publicar</button>
+        
     </form>
+    <button onclick="menu()">menu</button>
+    <button onclick="controlar_lista(noticias)">mostrar Noticias</button>
     <footer>
         <hr>
         <p>Copyright 2022 Roberth Herberth. Todos os direitos reservados ao seus respectivos autores e editoras</p>
