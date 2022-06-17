@@ -70,13 +70,12 @@ function mostrar_delete() {
 }
 
 function cadastrar(noticias) {
-    let noticia = mostrar_cadastro()
+    let noticia = controlar_cadastro()
     adicionar(noticias, noticia)
 }
 //model
 function mostrar_lista(noticias) {
     //view
-    alert('listar')
     let mensagem = '';
     let id = 0;
     for (let noticia of noticias) {
@@ -88,10 +87,8 @@ function mostrar_lista(noticias) {
 function editar(noticias) {
     controlar_lista(noticias)
     //control and view
-    let [noticiaNovo, id] = mostrar_edicao()
-    
-    //model
-    alterar(noticias, noticiaNovo, id)
+    noticias = listar(noticias);
+    mostrar_lista(livros)
     
 }  
 function apagar(noticias) {
