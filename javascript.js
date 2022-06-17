@@ -8,32 +8,18 @@ function alterar(noticias, noticia, id) {
 function deletar(noticias, id) {
     noticias.splice(id, 1)
 }
-function listar(noticias) {
+function listar(noticias, callback) {
+    setTimeout(() => {
+        callback(livros)
+    }, "3000")
     return noticias
 }
 function controlar_lista(noticias) {
     noticias = listar(noticias);
     mostrar_lista(noticias)
 }
-function mostrar_cadastro() {
-    alert('cadastrar') 
-    let titulo = prompt('titulo do noticia');
-    let autor = prompt('titulo do autor');
-    let imagem = prompt('imagen referencia: ');
-    let texto = prompt('sua noticia: ');
-    let dataNoticia = parseInt(prompt('data publicacao da noticia '));
-    let noticia = {
-        titulo: titulo,
-        autor: autor,
-        imagem: imagem,
-        texto: texto,
-        dataNoticia: dataNoticia 
-    };
-    return noticia
-}
-function mostrar_edicao() {
-    let id = parseInt(prompt('Qual id quer editar?'))
-    let noticia = noticias[id]
+
+function mostrar_edicao(noticia) {
     let titulo = prompt(`titulo da noticia? [${noticia.titulo}]`); 
     if (titulo == '') {
         titulo = noticia.titulo        

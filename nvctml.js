@@ -18,6 +18,7 @@ function mostrar_lista(noticias) {
     let mensagem = '';
     let id = 0;
     let tbody = document.querySelector('#tbody')
+    tbody.innerHTML = '';
     for (let noticia of noticias) {
         let linha = document.createElement('tr')
         let coluna = document.createElement('td')
@@ -27,12 +28,22 @@ function mostrar_lista(noticias) {
         let coluna5 = document.createElement('td')
         let coluna6 = document.createElement('td')
         let coluna7 = document.createElement('td')
+        let coluna8 = document.createElement('td')
+        let botao = document.createElement('button')
         coluna.innerText = id
         coluna2.innerText = noticia.titulo
         coluna3.innerText = noticia.autor
         coluna5.innerText = noticia.imagem
         coluna6.innerText = noticia.texto
         coluna7.innerText = noticia.dataNoticia
+        coluna8.innerHTML = ` <button onclick="deletar(noticias, ${id})">apagar</button>`
+        botao.innerText = 'editar'
+        botao.onclick = function(id) {
+            return function() {
+                alterar(noticias, noticia, id)
+                alert('alterando')
+            }
+        } (id)
         linha.appendChild(coluna)
         linha.appendChild(coluna2)
         linha.appendChild(coluna3)
@@ -40,6 +51,8 @@ function mostrar_lista(noticias) {
         linha.appendChild(coluna5)
         linha.appendChild(coluna6)
         linha.appendChild(coluna7)
+        coluna8.appendChild(botao)
+        linha.appendChild(coluna8)
         tbody.appendChild(linha)
         id++;
     }
