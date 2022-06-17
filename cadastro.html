@@ -25,15 +25,15 @@
         </nav>
         <hr>
     </header>
-    <form action="" onsubmit="controlar_cadastro()" class="formulario">
+    <form onsubmit="event.preventDefault(); cadastrar(noticias)" class="formulario">
         <table>
             <tr>
                 <td><label for="titulonoticia">Titulo da Notícia: </label></td>
-                <td><input type="text" id="titulonoticia" name="titulonoticia"></td>
+                <td><input type="text" id="titulo" name="titulonoticia"></td>
             </tr>
             <tr>
                 <td><label for="nomeautor">Nome do Autor: </label></td>
-                <td><input type="text" id="nomeautor" name="nomeautor"></td>
+                <td><input type="text" id="autor" name="nomeautor"></td>
             </tr>
             <tr>
                 <td><label for="imagem">imagem: </label></td>
@@ -48,10 +48,25 @@
                 <td><input type="date" id="data" name="data"></td>
             </tr>
         </table>
-        
+        <button onclick="cadastrar(noticias)">submit</button>
     </form>
     <button onclick="menu()">menu</button>
-    <button onclick="controlar_lista(noticias)">mostrar Noticias</button>
+    <button onclick="mostrar_lista(noticias)">atualizar</button>
+    <table>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>titulo</th>
+                <th>autor</th>
+                <th>imagem</th>
+                <th>noticia</th>
+                <th>data da noticia</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+            
+        </tbody>
+    </table>
     <footer>
         <hr>
         <p>Copyright 2022 Roberth Herberth. Todos os direitos reservados ao seus respectivos autores e editoras</p>
