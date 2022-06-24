@@ -74,7 +74,7 @@ function editar(noticias) {
     controlar_lista(noticias)
     //control and view
     noticias = listar(noticias);
-    mostrar_lista(livros)
+    mostrar_lista(noticias)
     
 }  
 function apagar(noticias) {
